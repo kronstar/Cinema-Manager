@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36FE3E5F-B903-4D32-B384-8641CBFF5A21}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyRapPhim</RootNamespace>
+    <AssemblyName>QuanLyRapPhim</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cinema-reel.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\ToolKit\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Additional\Colors.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillDetailsDAO.cs" />
+    <Compile Include="DAO\CinemaRoomDAO.cs" />
+    <Compile Include="DAO\ClientDAO.cs" />
+    <Compile Include="DAO\DataDAO.cs" />
+    <Compile Include="DAO\GenreDAO.cs" />
+    <Compile Include="DAO\MovieClassificationDAO.cs" />
+    <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\MovieFormatDAO.cs" />
+    <Compile Include="DAO\MovieTicketDAO.cs" />
+    <Compile Include="DAO\ScreenTypeDAO.cs" />
+    <Compile Include="DAO\ShowtimeDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\StatisticalDAO.cs" />
+    <Compile Include="DTO\BillDetails.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\CinemaRoom.cs" />
+    <Compile Include="DTO\Client.cs" />
+    <Compile Include="DTO\Genre.cs" />
+    <Compile Include="DTO\Movie.cs" />
+    <Compile Include="DTO\MovieFormat.cs" />
+    <Compile Include="DTO\MovieTicket.cs" />
+    <Compile Include="DTO\QuanLyRapPhim.cs" />
+    <Compile Include="DTO\ScreenType.cs" />
+    <Compile Include="DTO\Showtime.cs" />
+    <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\MovieClassification.cs" />
+    <Compile Include="GUI\frmClientBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmClientBill.Designer.cs">
+      <DependentUpon>frmClientBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmConnectDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmConnectDB.Designer.cs">
+      <DependentUpon>frmConnectDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\AccountUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\AccountUC.Designer.cs">
+      <DependentUpon>AccountUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\CinemaRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\CinemaRoomUC.Designer.cs">
+      <DependentUpon>CinemaRoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\ClientUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\ClientUC.Designer.cs">
+      <DependentUpon>ClientUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\GenreUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\GenreUC.Designer.cs">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\MovieFormatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\MovieFormatUC.Designer.cs">
+      <DependentUpon>MovieFormatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\MovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\MovieUC.Designer.cs">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\StatisticalUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\StatisticalUC.Designer.cs">
+      <DependentUpon>StatisticalUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\ScreenTypeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\ScreenTypeUC.Designer.cs">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\SelectSeatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\SelectSeatUC.Designer.cs">
+      <DependentUpon>SelectSeatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\SelectShowtimeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\SelectShowtimeUC.Designer.cs">
+      <DependentUpon>SelectShowtimeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\ShowtimeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\ShowtimeUC.Designer.cs">
+      <DependentUpon>ShowtimeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\StaffUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\StaffUC.Designer.cs">
+      <DependentUpon>StaffUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\TicketUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmUserControl\TicketUC.Designer.cs">
+      <DependentUpon>TicketUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmHomepage.Designer.cs">
+      <DependentUpon>frmHomepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="GUI\frmClientBill.resx">
+      <DependentUpon>frmClientBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmConnectDB.resx">
+      <DependentUpon>frmConnectDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\AccountUC.resx">
+      <DependentUpon>AccountUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\CinemaRoomUC.resx">
+      <DependentUpon>CinemaRoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\ClientUC.resx">
+      <DependentUpon>ClientUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\GenreUC.resx">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\MovieFormatUC.resx">
+      <DependentUpon>MovieFormatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\MovieUC.resx">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\ScreenTypeUC.resx">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\SelectSeatUC.resx">
+      <DependentUpon>SelectSeatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\SelectShowtimeUC.resx">
+      <DependentUpon>SelectShowtimeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\ShowtimeUC.resx">
+      <DependentUpon>ShowtimeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\StaffUC.resx">
+      <DependentUpon>StaffUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\StatisticalUC.resx">
+      <DependentUpon>StatisticalUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmUserControl\TicketUC.resx">
+      <DependentUpon>TicketUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHomepage.resx">
+      <DependentUpon>frmHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="cinema-reel.ico" />
+    <None Include="Resources\img-01.png" />
+    <None Include="Resources\error_icon.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
